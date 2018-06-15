@@ -73,7 +73,7 @@
                     <items>
                         <table alignment="left" id="Knw-qy-hXK"/>
                         <switch width="1" alignment="left" value="YES" title="Haptic" id="Faj-I9-Oa8"/>
-                        <picker height="100" alignment="left" id="neq-nr-ivY">
+                        <picker width="1" height="100" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="neq-nr-ivY">
                             <connections>
                                 <action selector="pickerChanged:" destination="7A3-5N-dNz" id="xfG-vz-DZe"/>
                             </connections>

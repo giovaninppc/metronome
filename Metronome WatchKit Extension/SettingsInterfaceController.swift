@@ -14,10 +14,7 @@ class SettingsInterfaceController: WKInterfaceController {
 
     @IBOutlet var picker: WKInterfacePicker!
     
-    let list: [String] = ["Click", "Roam", "BlugBlug"]
-    let dict: [String: WKHapticType] = ["Click" : .click,
-                                        "Roam": .directionUp,
-                                        "BlugBlug": .directionDown]
+    let list: [(String, String)] = [("Click", "little"), ("Roam", "asasas"), ("jhsdbfljhas", "hard")]
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -27,19 +24,20 @@ class SettingsInterfaceController: WKInterfaceController {
     
     /// Add the items list to the picker
     func populatePicker () {
-        var itemsArray: [WKPickerItem] = []
-        for item in list {
-            let newItem = WKPickerItem()
-            newItem.title = item
-            newItem.caption = item
-            itemsArray.append(newItem)
+        let pickerItems: [WKPickerItem] = list.map { (title, caption) -> WKPickerItem in
+            let pickerItem = WKPickerItem()
+            pickerItem.caption = caption
+            pickerItem.title = title
+//            pickerItem.contentImage = WKImage(image: #imageLiteral(resourceName: "Play"))
+            return pickerItem
         }
-        picker.setItems(itemsArray)
+        picker.setItems(pickerItems)
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        populatePicker()
     }
 
     override func didDeactivate() {
