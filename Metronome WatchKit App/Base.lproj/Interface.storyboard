@@ -21,15 +21,29 @@
                         <separator alignment="left" id="EpG-kV-928">
                             <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </separator>
-                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="RWL-rm-H3v">
+                        <slider width="1" alignment="left" value="120" minimum="40" maximum="240" steps="20" id="RWL-rm-H3v">
                             <color key="color" red="0.054901960780000002" green="0.83529411760000005" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="sliderChangeValue:" destination="AgC-eL-Hgc" id="eGc-Bq-89A"/>
+                            </connections>
                         </slider>
                         <separator alignment="left" id="q4Q-Nb-mZk">
                             <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </separator>
-                        <imageView alignment="left" id="3Za-OA-GZ5"/>
+                        <imageView width="1" height="0.34999999999999998" alignment="left" image="Play" contentMode="scaleAspectFit" id="3Za-OA-GZ5">
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="lIX-Bu-XRh">
+                                    <connections>
+                                        <action selector="tap:" destination="AgC-eL-Hgc" id="pTc-M9-ecB"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                        </imageView>
                     </items>
                     <connections>
+                        <outlet property="image" destination="3Za-OA-GZ5" id="OxM-JY-iNi"/>
+                        <outlet property="label" destination="8lF-7d-Jb4" id="2H1-M5-mSu"/>
+                        <outlet property="slider" destination="RWL-rm-H3v" id="RMA-Bj-YTi"/>
                         <segue destination="7A3-5N-dNz" kind="relationship" relationship="nextPage" id="3xv-2t-TY2"/>
                     </connections>
                 </controller>
@@ -55,12 +69,19 @@
         <!--Settings-->
         <scene sceneID="zzI-yT-lHK">
             <objects>
-                <controller title="Settings" backgroundImage="Waveform" id="7A3-5N-dNz">
+                <controller title="Settings" backgroundImage="Waveform" id="7A3-5N-dNz" customClass="SettingsInterfaceController" customModule="Metronome_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="Knw-qy-hXK"/>
-                        <switch width="1" alignment="left" value="YES" title="Switch" id="Faj-I9-Oa8"/>
-                        <picker height="100" alignment="left" id="neq-nr-ivY"/>
+                        <switch width="1" alignment="left" value="YES" title="Haptic" id="Faj-I9-Oa8"/>
+                        <picker height="100" alignment="left" id="neq-nr-ivY">
+                            <connections>
+                                <action selector="pickerChanged:" destination="7A3-5N-dNz" id="xfG-vz-DZe"/>
+                            </connections>
+                        </picker>
                     </items>
+                    <connections>
+                        <outlet property="picker" destination="neq-nr-ivY" id="QLh-yq-6oJ"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="475" y="345"/>

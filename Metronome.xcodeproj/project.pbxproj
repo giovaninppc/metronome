@@ -20,6 +20,7 @@
 		9BD2B02A20D3E5A600031CB6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2B02920D3E5A600031CB6 /* ExtensionDelegate.swift */; };
 		9BD2B02C20D3E5A600031CB6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2B02B20D3E5A600031CB6 /* NotificationController.swift */; };
 		9BD2B02E20D3E5A700031CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD2B02D20D3E5A700031CB6 /* Assets.xcassets */; };
+		9BD2B03F20D3EDC800031CB6 /* SettingsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2B03E20D3EDC800031CB6 /* SettingsInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		9BD2B02D20D3E5A700031CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BD2B02F20D3E5A700031CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BD2B03020D3E5A700031CB6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		9BD2B03E20D3EDC800031CB6 /* SettingsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				9BD2B02720D3E5A600031CB6 /* InterfaceController.swift */,
+				9BD2B03E20D3EDC800031CB6 /* SettingsInterfaceController.swift */,
 				9BD2B02920D3E5A600031CB6 /* ExtensionDelegate.swift */,
 				9BD2B02B20D3E5A600031CB6 /* NotificationController.swift */,
 				9BD2B02D20D3E5A700031CB6 /* Assets.xcassets */,
@@ -302,6 +305,7 @@
 			files = (
 				9BD2B02C20D3E5A600031CB6 /* NotificationController.swift in Sources */,
 				9BD2B02A20D3E5A600031CB6 /* ExtensionDelegate.swift in Sources */,
+				9BD2B03F20D3EDC800031CB6 /* SettingsInterfaceController.swift in Sources */,
 				9BD2B02820D3E5A600031CB6 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

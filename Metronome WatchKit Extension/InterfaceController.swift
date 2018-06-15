@@ -12,6 +12,17 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet var label: WKInterfaceLabel!
+    @IBOutlet var slider: WKInterfaceSlider!
+    @IBOutlet var image: WKInterfaceImage!
+    
+    var play: Bool = false
+    var bpm: Int = 120 {
+        didSet {
+            label.setText("\(bpm) BPM")
+        }
+    }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -28,4 +39,16 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    @IBAction func sliderChangeValue(_ value: Float) {
+        bpm = Int(value)
+    }
+    @IBAction func tap(_ sender: Any) {
+        if play {
+            image.setImage(#imageLiteral(resourceName: "Pause"))
+        } else {
+            image.setImage(#imageLiteral(resourceName: "Play"))
+        }
+        
+        play = !play
+    }
 }
