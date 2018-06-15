@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+    </dependencies>
+    <scenes>
+        <!--Metronome-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="Metronome" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Metronome_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="DhM-QR-MZ1"/>
+                    </items>
+                    <connections>
+                        <segue destination="7A3-5N-dNz" kind="relationship" relationship="nextPage" id="3xv-2t-TY2"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="zzI-yT-lHK">
+            <objects>
+                <controller title="Settings" id="7A3-5N-dNz">
+                    <items>
+                        <table alignment="left" id="Knw-qy-hXK">
+                            <items>
+                                <tableRow id="DI0-aV-rhv">
+                                    <group key="rootItem" width="1" alignment="left" id="d8o-PO-1GK">
+                                        <items>
+                                            <switch width="1" alignment="left" value="YES" title="Haptic" id="Mk2-TD-u8a"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                                <tableRow id="MfR-uW-XUO">
+                                    <group key="rootItem" width="1" alignment="left" id="EEk-fS-yEM">
+                                        <items>
+                                            <switch width="1" alignment="left" value="YES" title="Sound" id="pTK-VJ-WO5"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="475" y="345"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Metronome_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.054901960784313725" green="0.83529411764705885" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>
