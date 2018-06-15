@@ -25,8 +25,9 @@ class InterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
         // Configure interface objects here.
+        image.setImage(#imageLiteral(resourceName: "Play"))
+        bpm = 120
     }
     
     override func willActivate() {

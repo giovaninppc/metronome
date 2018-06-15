@@ -15,7 +15,8 @@ class SettingsInterfaceController: WKInterfaceController {
     @IBOutlet var picker: WKInterfacePicker!
     
     let list: [String] = ["Click", "Roam", "BlugBlug"]
-    let dict: [String: WKHapticType] = ["Click" : .click, "Roam": .directionUp,
+    let dict: [String: WKHapticType] = ["Click" : .click,
+                                        "Roam": .directionUp,
                                         "BlugBlug": .directionDown]
     
     override func awake(withContext context: Any?) {
@@ -30,8 +31,10 @@ class SettingsInterfaceController: WKInterfaceController {
         for item in list {
             let newItem = WKPickerItem()
             newItem.title = item
+            newItem.caption = item
             itemsArray.append(newItem)
         }
+        picker.setItems(itemsArray)
     }
 
     override func willActivate() {
