@@ -12,9 +12,22 @@
         <!--Metronome-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller title="Metronome" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Metronome_WatchKit_App" customModuleProvider="target">
+                <controller title="Metronome" backgroundImage="Waveform" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Metronome_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" id="DhM-QR-MZ1"/>
+                        <label width="1" alignment="left" text="120 BPM" textAlignment="center" id="8lF-7d-Jb4">
+                            <color key="textColor" red="0.054901960780000002" green="0.83529411760000005" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" pointSize="30"/>
+                        </label>
+                        <separator alignment="left" id="EpG-kV-928">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
+                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="RWL-rm-H3v">
+                            <color key="color" red="0.054901960780000002" green="0.83529411760000005" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </slider>
+                        <separator alignment="left" id="q4Q-Nb-mZk">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
+                        <imageView alignment="left" id="3Za-OA-GZ5"/>
                     </items>
                     <connections>
                         <segue destination="7A3-5N-dNz" kind="relationship" relationship="nextPage" id="3xv-2t-TY2"/>
@@ -42,26 +55,11 @@
         <!--Settings-->
         <scene sceneID="zzI-yT-lHK">
             <objects>
-                <controller title="Settings" id="7A3-5N-dNz">
+                <controller title="Settings" backgroundImage="Waveform" id="7A3-5N-dNz">
                     <items>
-                        <table alignment="left" id="Knw-qy-hXK">
-                            <items>
-                                <tableRow id="DI0-aV-rhv">
-                                    <group key="rootItem" width="1" alignment="left" id="d8o-PO-1GK">
-                                        <items>
-                                            <switch width="1" alignment="left" value="YES" title="Haptic" id="Mk2-TD-u8a"/>
-                                        </items>
-                                    </group>
-                                </tableRow>
-                                <tableRow id="MfR-uW-XUO">
-                                    <group key="rootItem" width="1" alignment="left" id="EEk-fS-yEM">
-                                        <items>
-                                            <switch width="1" alignment="left" value="YES" title="Sound" id="pTK-VJ-WO5"/>
-                                        </items>
-                                    </group>
-                                </tableRow>
-                            </items>
-                        </table>
+                        <table alignment="left" id="Knw-qy-hXK"/>
+                        <switch width="1" alignment="left" value="YES" title="Switch" id="Faj-I9-Oa8"/>
+                        <picker height="100" alignment="left" id="neq-nr-ivY"/>
                     </items>
                 </controller>
             </objects>
