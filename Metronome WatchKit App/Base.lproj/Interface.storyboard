@@ -73,14 +73,14 @@
                     <items>
                         <table alignment="left" id="Knw-qy-hXK"/>
                         <switch width="1" alignment="left" value="YES" title="Haptic" id="Faj-I9-Oa8"/>
-                        <picker width="1" height="100" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="neq-nr-ivY">
+                        <picker height="100" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="fFl-Cz-9Dc">
                             <connections>
-                                <action selector="pickerChanged:" destination="7A3-5N-dNz" id="xfG-vz-DZe"/>
+                                <action selector="pickerChanged:" destination="7A3-5N-dNz" id="3qs-SL-RnL"/>
                             </connections>
                         </picker>
                     </items>
                     <connections>
-                        <outlet property="picker" destination="neq-nr-ivY" id="QLh-yq-6oJ"/>
+                        <outlet property="picker" destination="fFl-Cz-9Dc" id="5aL-rv-BmP"/>
                     </connections>
                 </controller>
             </objects>

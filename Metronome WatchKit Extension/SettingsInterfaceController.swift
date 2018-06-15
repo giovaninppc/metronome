@@ -28,7 +28,6 @@ class SettingsInterfaceController: WKInterfaceController {
             let pickerItem = WKPickerItem()
             pickerItem.caption = caption
             pickerItem.title = title
-//            pickerItem.contentImage = WKImage(image: #imageLiteral(resourceName: "Play"))
             return pickerItem
         }
         picker.setItems(pickerItems)
@@ -46,6 +45,7 @@ class SettingsInterfaceController: WKInterfaceController {
     }
     
     @IBAction func pickerChanged(_ value: Int) {
+        print(value)
     }
     
 }

@@ -9,17 +9,29 @@
 import WatchKit
 import Foundation
 
-
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var label: WKInterfaceLabel!
     @IBOutlet var slider: WKInterfaceSlider!
     @IBOutlet var image: WKInterfaceImage!
     
+    var timer: Timer = Timer()
     var play: Bool = false
+    
+    // Compass definitins
+    var compassUp: Int = 4
+    var compassCounter: Int = 0
+    
+    var pulse: Double {
+        return 60.0/Double(bpm)
+    }
     var bpm: Int = 120 {
         didSet {
             label.setText("\(bpm) BPM")
+            if play {
+                timer.invalidate()
+                self.startMetronome()
+            }
         }
     }
     
@@ -39,17 +51,37 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+    func startMetronome() {
+        timer = Timer.scheduledTimer(timeInterval: pulse, target: self, selector: #selector(updateMetronome), userInfo: nil, repeats: true)
+    }
+    
+    func stopMetronome() {
+        compassCounter = 0
+        timer.invalidate()
+    }
+    
+    @objc func updateMetronome() {
+        compassCounter += 1
+        if compassCounter == compassUp {
+            WKInterfaceDevice.current().play(.click)
+            compassCounter = 0
+        } else {
+            WKInterfaceDevice.current().play(.click)
+        }
+    }
 
     @IBAction func sliderChangeValue(_ value: Float) {
         bpm = Int(value)
     }
     @IBAction func tap(_ sender: Any) {
+        play = !play
         if play {
+            startMetronome()
             image.setImage(#imageLiteral(resourceName: "Pause"))
         } else {
+            stopMetronome()
             image.setImage(#imageLiteral(resourceName: "Play"))
         }
-        
-        play = !play
     }
 }
