@@ -18,14 +18,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var playImage: UIImageView!
     @IBOutlet weak var auxView: UIView!
     @IBOutlet weak var compassLabel: UILabel!
+    @IBOutlet var roundViews: [UIView]!
+    
+    @IBOutlet weak var minusView: UIView!
+    @IBOutlet weak var plusView: UIView!
+    
+    var minusCenter: CGPoint = CGPoint.zero
+    var plusCenter: CGPoint = CGPoint.zero
     
     let max: Int = 240
     let min: Int = 40
     var timer: Timer = Timer()
     var play: Bool = false
-    var compass: Int = 0
     var compassCounter: Int = 0
     
+    var compass: Int = 0 {
+        didSet {
+            if compass < 1 {
+                compass = 1
+            } else if compass > 12 {
+                compass = 12
+            }
+            compassLabel.text = "\(compass)"
+        }
+    }
     var pace: Int = 120 {
         didSet {
             pulseLabel.text = "\(pace) BPM"
@@ -42,9 +58,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bgBlue.layer.cornerRadius = bgBlue.frame.width/2
-        auxView.layer.cornerRadius = auxView.frame.width/2
+        for view in roundViews {
+            view.layer.cornerRadius = view.frame.width/2
+        }
         pace = Int(stepper.value)
+        compass = 4
+        
+        // Get position information
+        minusCenter = minusView.center
+        plusCenter = plusView.center
+        isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        hideButtons()
     }
 
     @IBAction func stepperValueChanged(_ sender: Any) {
@@ -60,13 +88,13 @@ class ViewController: UIViewController {
     }
     
     @objc func updateMetronome() {
-        pulseView()
+        pulseView(amount: 0.1)
         AudioController.playLowBeep()
     }
     
-    func pulseView() {
+    func pulseView(amount: CGFloat) {
         UIView.transition(with: bgBlue, duration: 0.1, options: .layoutSubviews, animations: {
-            self.bgBlue.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            self.bgBlue.transform = CGAffineTransform(scaleX: 1.0 + amount, y: 1.0 + amount)
         }, completion: { (_) in
             UIView.transition(with: self.bgBlue, duration: 0.1, options: .layoutSubviews, animations: {
                 self.bgBlue.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
@@ -84,6 +112,58 @@ class ViewController: UIViewController {
             self.stopMetronome()
         }
     }
+    
+    /// Show and hide +/- buttons
+    var isHidden: Bool = true
+    @IBAction func compassButton(_ sender: Any) {
+        isHidden = !isHidden
+        
+        if isHidden {
+            hideButtons()
+        } else {
+            showButtons()
+        }
+        UIView.transition(with: auxView, duration: 0.1, options: .curveEaseIn, animations: {
+            self.auxView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }, completion: nil)
+    }
+    @IBAction func compassButtonDown(_ sender: Any) {
+        UIView.transition(with: auxView, duration: 0.1, options: .curveEaseIn, animations: {
+            self.auxView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        }, completion: nil)
+    }
+    @IBAction func compassButtonUpOutside(_ sender: Any) {
+        UIView.transition(with: auxView, duration: 0.1, options: .curveEaseIn, animations: {
+            self.auxView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }, completion: nil)
+    }
+    
+    @IBAction func minusCompass(_ sender: Any) {
+        compass -= 1
+    }
+    
+    @IBAction func plusCompass(_ sender: Any) {
+        compass += 1
+    }
+    
+    func showButtons() {
+        UIView.transition(with: minusView, duration: 0.5, options: .curveEaseIn, animations: {
+            self.minusView.center = self.minusCenter
+        }, completion: nil)
+        UIView.transition(with: plusView, duration: 0.5, options: .curveEaseIn, animations: {
+            self.plusView.center = self.plusCenter
+        }, completion: nil)
+    }
+    
+    func hideButtons() {
+        UIView.transition(with: minusView, duration: 0.5, options: .curveEaseIn, animations: {
+            self.minusView.center = self.auxView.center
+        }, completion: nil)
+        UIView.transition(with: plusView, duration: 0.5, options: .curveEaseIn, animations: {
+            self.plusView.center = self.auxView.center
+        }, completion: nil)
+    }
+    
 }
 
 
