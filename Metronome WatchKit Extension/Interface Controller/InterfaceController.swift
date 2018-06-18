@@ -21,6 +21,7 @@ class InterfaceController: WKInterfaceController {
     // Compass definitins
     var compassUp: Int = 4
     var compassCounter: Int = 0
+    var soundState: Bool = false
     
     var pulse: Double {
         return 60.0/Double(bpm)
@@ -51,19 +52,29 @@ class InterfaceController: WKInterfaceController {
         timer.invalidate()
     }
     
+    override func willActivate() {
+        super.willActivate()
+        soundState = DefaultsManager.getSoundState()
+        print(soundState)
+    }
+    
     @objc func updateMetronome() {
         compassCounter += 1
-        
-        if DefaultsManager.getSoundState() {
+//        if compassCounter == compassUp {
+//
+//        } else {
+//            if soundState {
+//                AudioController.playAudio()
+//            } else {
+//                WKInterfaceDevice.current().play(.click)
+//            }
+//        }
+        if soundState {
             AudioController.playAudio()
         } else {
-            if compassCounter == compassUp {
-                WKInterfaceDevice.current().play(.click)
-                compassCounter = 0
-            } else {
-                WKInterfaceDevice.current().play(.click)
-            }
+            WKInterfaceDevice.current().play(.click)
         }
+        compassCounter = 0
     }
 
     @IBAction func sliderChangeValue(_ value: Float) {

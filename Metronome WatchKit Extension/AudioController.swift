@@ -11,7 +11,6 @@
 import Foundation
 import AVFoundation
 
-
 class AudioController {
     
     static var path = Bundle.main.path(forResource: "metronome_click", ofType: "mp3")
@@ -19,7 +18,7 @@ class AudioController {
     static var _audioEngine: AVAudioEngine!
     
     class func playAudio() {
-        if (_audioPlayer==nil) {
+        if _audioPlayer == nil {
             _audioPlayer = AVAudioPlayerNode()
             _audioEngine = AVAudioEngine()
             _audioEngine.attach(_audioPlayer)
@@ -46,7 +45,6 @@ class AudioController {
                 print ("asset error \(error.localizedDescription)")
             }
         }
-        
         
     }
     

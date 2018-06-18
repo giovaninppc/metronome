@@ -73,6 +73,8 @@
                     <items>
                         <table alignment="left" id="Knw-qy-hXK"/>
                         <switch width="1" alignment="left" value="YES" title="Sound" id="Faj-I9-Oa8">
+                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.054901960780000002" green="0.83529411760000005" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="soundSwitchDidChangeValue:" destination="7A3-5N-dNz" id="hzA-ih-ahG"/>
                             </connections>
