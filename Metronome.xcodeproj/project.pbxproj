@@ -25,6 +25,8 @@
 		9BD2B04120D40BE800031CB6 /* TestInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2B04020D40BE800031CB6 /* TestInterfaceController.swift */; };
 		9BF7BAEC20D81CA900D894EB /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7BAEB20D81CA900D894EB /* UserDefaultsManager.swift */; };
 		9BF7BAEE20D81DE000D894EB /* metronome_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */; };
+		9BF7BAEF20D834FF00D894EB /* metronome_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */; };
+		9BF7BAF120D8393300D894EB /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7BAF020D8393300D894EB /* AudioController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,7 @@
 		9BD2B04020D40BE800031CB6 /* TestInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInterfaceController.swift; sourceTree = "<group>"; };
 		9BF7BAEB20D81CA900D894EB /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metronome_click.mp3; sourceTree = "<group>"; };
+		9BF7BAF020D8393300D894EB /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 				9BD2B00B20D3E5A500031CB6 /* Assets.xcassets */,
 				9BD2B00D20D3E5A500031CB6 /* LaunchScreen.storyboard */,
 				9BD2B01020D3E5A500031CB6 /* Info.plist */,
+				9BF7BAF020D8393300D894EB /* AudioController.swift */,
 			);
 			path = Metronome;
 			sourceTree = "<group>";
@@ -300,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF7BAEF20D834FF00D894EB /* metronome_click.mp3 in Resources */,
 				9BD2B00F20D3E5A500031CB6 /* LaunchScreen.storyboard in Resources */,
 				9BD2B00C20D3E5A500031CB6 /* Assets.xcassets in Resources */,
 				9BD2B00A20D3E5A400031CB6 /* Main.storyboard in Resources */,
@@ -332,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD2B00720D3E5A400031CB6 /* ViewController.swift in Sources */,
+				9BF7BAF120D8393300D894EB /* AudioController.swift in Sources */,
 				9BD2B00520D3E5A400031CB6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
