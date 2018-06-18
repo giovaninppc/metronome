@@ -27,6 +27,7 @@
 		9BF7BAEE20D81DE000D894EB /* metronome_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */; };
 		9BF7BAEF20D834FF00D894EB /* metronome_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */; };
 		9BF7BAF120D8393300D894EB /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7BAF020D8393300D894EB /* AudioController.swift */; };
+		9BF7BAF320D84EBB00D894EB /* UserDefaultsMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7BAF220D84EBB00D894EB /* UserDefaultsMananger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		9BF7BAEB20D81CA900D894EB /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metronome_click.mp3; sourceTree = "<group>"; };
 		9BF7BAF020D8393300D894EB /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		9BF7BAF220D84EBB00D894EB /* UserDefaultsMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMananger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				9BD2B00D20D3E5A500031CB6 /* LaunchScreen.storyboard */,
 				9BD2B01020D3E5A500031CB6 /* Info.plist */,
 				9BF7BAF020D8393300D894EB /* AudioController.swift */,
+				9BF7BAF220D84EBB00D894EB /* UserDefaultsMananger.swift */,
 			);
 			path = Metronome;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD2B00720D3E5A400031CB6 /* ViewController.swift in Sources */,
+				9BF7BAF320D84EBB00D894EB /* UserDefaultsMananger.swift in Sources */,
 				9BF7BAF120D8393300D894EB /* AudioController.swift in Sources */,
 				9BD2B00520D3E5A400031CB6 /* AppDelegate.swift in Sources */,
 			);
@@ -450,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -505,7 +509,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				STRIP_BITCODE_FROM_COPIED_FILES = NO;
@@ -604,6 +608,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ECVV26Q6C;
 				INFOPLIST_FILE = Metronome/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -622,6 +627,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ECVV26Q6C;
 				INFOPLIST_FILE = Metronome/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

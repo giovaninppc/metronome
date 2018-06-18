@@ -19,10 +19,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var auxView: UIView!
     @IBOutlet weak var compassLabel: UILabel!
     @IBOutlet var roundViews: [UIView]!
+    @IBOutlet weak var animationSwitch: UISwitch!
     
     @IBOutlet weak var minusView: UIView!
     @IBOutlet weak var plusView: UIView!
     
+    // Guides and References
+    @IBOutlet weak var settingsGuide1: UIView!
+    @IBOutlet weak var settings1: UIView!
+    var settings1Center: CGPoint = CGPoint.zero
     var minusCenter: CGPoint = CGPoint.zero
     var plusCenter: CGPoint = CGPoint.zero
     
@@ -31,6 +36,8 @@ class ViewController: UIViewController {
     var timer: Timer = Timer()
     var play: Bool = false
     var compassCounter: Int = 0
+    
+    var animation: Bool = false
     
     var compass: Int = 0 {
         didSet {
@@ -67,7 +74,12 @@ class ViewController: UIViewController {
         // Get position information
         minusCenter = minusView.center
         plusCenter = plusView.center
+        settings1Center = settings1.center
         isHidden = true
+        
+        // Set settings
+        animation = UserDefaultsManager.getAnimationState()
+        animationSwitch.isOn = animation
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -88,8 +100,20 @@ class ViewController: UIViewController {
     }
     
     @objc func updateMetronome() {
-        pulseView(amount: 0.1)
-        AudioController.playLowBeep()
+        compassCounter += 1
+        
+        if compassCounter == compass {
+            if animation {
+                pulseView(amount: 0.2)
+            }
+            AudioController.playLowBeep()
+            compassCounter = 0
+        } else {
+            if animation {
+                pulseView(amount: 0.1)
+            }
+            AudioController.playLowBeep()
+        }
     }
     
     func pulseView(amount: CGFloat) {
@@ -164,6 +188,30 @@ class ViewController: UIViewController {
         }, completion: nil)
     }
     
+    var settings: Bool = false
+    @IBAction func settingsButton(_ sender: Any) {
+        settings = !settings
+        if settings {
+            showSettings()
+        } else {
+            hideSettings()
+        }
+    }
+    
+    func showSettings() {
+        UIView.transition(with: settings1, duration: 0.5, options: .curveEaseIn, animations: {
+            self.settings1.center = self.settingsGuide1.center
+        }, completion: nil)
+    }
+    func hideSettings() {
+        UIView.transition(with: settings1, duration: 0.5, options: .curveEaseIn, animations: {
+            self.settings1.center = self.settings1Center
+        }, completion: nil)
+    }
+    @IBAction func animationSwitchChangedValue(_ sender: Any) {
+        self.animation = animationSwitch.isOn
+        UserDefaultsManager.setAnimationState(to: animation)
+    }
 }
 
 
