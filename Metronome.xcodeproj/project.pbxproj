@@ -29,6 +29,7 @@
 		9BF7BAF120D8393300D894EB /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7BAF020D8393300D894EB /* AudioController.swift */; };
 		9BF7BAF320D84EBB00D894EB /* UserDefaultsMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7BAF220D84EBB00D894EB /* UserDefaultsMananger.swift */; };
 		9BF7BAF820D8554500D894EB /* metronome_loud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7BAF720D8554500D894EB /* metronome_loud.mp3 */; };
+		9BF7BAF920D8559500D894EB /* metronome_loud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7BAF720D8554500D894EB /* metronome_loud.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -313,6 +314,7 @@
 				9BF7BAEF20D834FF00D894EB /* metronome_click.mp3 in Resources */,
 				9BD2B00F20D3E5A500031CB6 /* LaunchScreen.storyboard in Resources */,
 				9BD2B00C20D3E5A500031CB6 /* Assets.xcassets in Resources */,
+				9BF7BAF920D8559500D894EB /* metronome_loud.mp3 in Resources */,
 				9BD2B00A20D3E5A400031CB6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

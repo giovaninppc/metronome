@@ -79,6 +79,10 @@
                                 <action selector="soundSwitchDidChangeValue:" destination="7A3-5N-dNz" id="hzA-ih-ahG"/>
                             </connections>
                         </switch>
+                        <label width="1" alignment="left" text="if the sound is Off, the Apple Watch will vibrate on each pulse" numberOfLines="0" id="wNg-NM-3oD">
+                            <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="soundSwitch" destination="Faj-I9-Oa8" id="wEj-u7-Adl"/>

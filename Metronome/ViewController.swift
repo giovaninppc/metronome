@@ -102,7 +102,7 @@ class ViewController: UIViewController {
     @objc func updateMetronome() {
         compassCounter += 1
         
-        if compassCounter == compass {
+        if compassCounter >= compass {
             if animation {
                 pulseView(amount: 0.2)
             }
