@@ -28,6 +28,7 @@
 		9BF7BAEF20D834FF00D894EB /* metronome_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */; };
 		9BF7BAF120D8393300D894EB /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7BAF020D8393300D894EB /* AudioController.swift */; };
 		9BF7BAF320D84EBB00D894EB /* UserDefaultsMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7BAF220D84EBB00D894EB /* UserDefaultsMananger.swift */; };
+		9BF7BAF820D8554500D894EB /* metronome_loud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7BAF720D8554500D894EB /* metronome_loud.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metronome_click.mp3; sourceTree = "<group>"; };
 		9BF7BAF020D8393300D894EB /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		9BF7BAF220D84EBB00D894EB /* UserDefaultsMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMananger.swift; sourceTree = "<group>"; };
+		9BF7BAF720D8554500D894EB /* metronome_loud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metronome_loud.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */,
+				9BF7BAF720D8554500D894EB /* metronome_loud.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				9BD2B02E20D3E5A700031CB6 /* Assets.xcassets in Resources */,
 				9BF7BAEE20D81DE000D894EB /* metronome_click.mp3 in Resources */,
+				9BF7BAF820D8554500D894EB /* metronome_loud.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

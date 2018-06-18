@@ -106,7 +106,7 @@ class ViewController: UIViewController {
             if animation {
                 pulseView(amount: 0.2)
             }
-            AudioController.playLowBeep()
+            AudioController.playHighBeep()
             compassCounter = 0
         } else {
             if animation {

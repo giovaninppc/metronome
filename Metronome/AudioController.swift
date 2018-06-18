@@ -21,6 +21,14 @@ class AudioController {
         }
     }
     
+    static func playHighBeep() {
+        if let url = Bundle.main.url(forResource: "metronome_loud", withExtension: "mp3") {
+            startSong(url)
+        } else {
+            return
+        }
+    }
+    
     private static func startSong(_ url: URL) {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
