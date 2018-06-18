@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B21C11420D8192200CB7CFA /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B21C11320D8192200CB7CFA /* AudioController.swift */; };
 		9BD2B00520D3E5A400031CB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2B00420D3E5A400031CB6 /* AppDelegate.swift */; };
 		9BD2B00720D3E5A400031CB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2B00620D3E5A400031CB6 /* ViewController.swift */; };
 		9BD2B00A20D3E5A400031CB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD2B00820D3E5A400031CB6 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 		9BD2B02E20D3E5A700031CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD2B02D20D3E5A700031CB6 /* Assets.xcassets */; };
 		9BD2B03F20D3EDC800031CB6 /* SettingsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2B03E20D3EDC800031CB6 /* SettingsInterfaceController.swift */; };
 		9BD2B04120D40BE800031CB6 /* TestInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2B04020D40BE800031CB6 /* TestInterfaceController.swift */; };
+		9BF7BAEC20D81CA900D894EB /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7BAEB20D81CA900D894EB /* UserDefaultsManager.swift */; };
+		9BF7BAEE20D81DE000D894EB /* metronome_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9B21C11320D8192200CB7CFA /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		9BD2B00120D3E5A400031CB6 /* Metronome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metronome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD2B00420D3E5A400031CB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BD2B00620D3E5A400031CB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 		9BD2B03020D3E5A700031CB6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		9BD2B03E20D3EDC800031CB6 /* SettingsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInterfaceController.swift; sourceTree = "<group>"; };
 		9BD2B04020D40BE800031CB6 /* TestInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInterfaceController.swift; sourceTree = "<group>"; };
+		9BF7BAEB20D81CA900D894EB /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metronome_click.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B21C11520D819FE00CB7CFA /* Interface Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9BD2B02720D3E5A600031CB6 /* InterfaceController.swift */,
+				9BD2B03E20D3EDC800031CB6 /* SettingsInterfaceController.swift */,
+			);
+			path = "Interface Controller";
+			sourceTree = "<group>";
+		};
 		9BD2AFF820D3E5A400031CB6 = {
 			isa = PBXGroup;
 			children = (
@@ -153,16 +168,34 @@
 		9BD2B02620D3E5A600031CB6 /* Metronome WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9BD2B02720D3E5A600031CB6 /* InterfaceController.swift */,
-				9BD2B03E20D3EDC800031CB6 /* SettingsInterfaceController.swift */,
-				9BD2B02920D3E5A600031CB6 /* ExtensionDelegate.swift */,
-				9BD2B02B20D3E5A600031CB6 /* NotificationController.swift */,
+				9B21C11520D819FE00CB7CFA /* Interface Controller */,
+				9BF7BAE720D81A2100D894EB /* Notification */,
+				9B21C11320D8192200CB7CFA /* AudioController.swift */,
+				9BF7BAEB20D81CA900D894EB /* UserDefaultsManager.swift */,
 				9BD2B02D20D3E5A700031CB6 /* Assets.xcassets */,
+				9BF7BAE820D81B0200D894EB /* Audio */,
 				9BD2B02F20D3E5A700031CB6 /* Info.plist */,
 				9BD2B03020D3E5A700031CB6 /* PushNotificationPayload.apns */,
-				9BD2B04020D40BE800031CB6 /* TestInterfaceController.swift */,
 			);
 			path = "Metronome WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		9BF7BAE720D81A2100D894EB /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				9BD2B04020D40BE800031CB6 /* TestInterfaceController.swift */,
+				9BD2B02920D3E5A600031CB6 /* ExtensionDelegate.swift */,
+				9BD2B02B20D3E5A600031CB6 /* NotificationController.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		9BF7BAE820D81B0200D894EB /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				9BF7BAED20D81DE000D894EB /* metronome_click.mp3 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD2B02E20D3E5A700031CB6 /* Assets.xcassets in Resources */,
+				9BF7BAEE20D81DE000D894EB /* metronome_click.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +343,9 @@
 				9BD2B02C20D3E5A600031CB6 /* NotificationController.swift in Sources */,
 				9BD2B02A20D3E5A600031CB6 /* ExtensionDelegate.swift in Sources */,
 				9BD2B03F20D3EDC800031CB6 /* SettingsInterfaceController.swift in Sources */,
+				9BF7BAEC20D81CA900D894EB /* UserDefaultsManager.swift in Sources */,
 				9BD2B04120D40BE800031CB6 /* TestInterfaceController.swift in Sources */,
+				9B21C11420D8192200CB7CFA /* AudioController.swift in Sources */,
 				9BD2B02820D3E5A600031CB6 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

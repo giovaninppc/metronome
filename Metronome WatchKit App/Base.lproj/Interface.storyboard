@@ -72,15 +72,14 @@
                 <controller title="Settings" backgroundImage="Waveform" id="7A3-5N-dNz" customClass="SettingsInterfaceController" customModule="Metronome_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="Knw-qy-hXK"/>
-                        <switch width="1" alignment="left" value="YES" title="Haptic" id="Faj-I9-Oa8"/>
-                        <picker height="100" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="fFl-Cz-9Dc">
+                        <switch width="1" alignment="left" value="YES" title="Sound" id="Faj-I9-Oa8">
                             <connections>
-                                <action selector="pickerChanged:" destination="7A3-5N-dNz" id="3qs-SL-RnL"/>
+                                <action selector="soundSwitchDidChangeValue:" destination="7A3-5N-dNz" id="hzA-ih-ahG"/>
                             </connections>
-                        </picker>
+                        </switch>
                     </items>
                     <connections>
-                        <outlet property="picker" destination="fFl-Cz-9Dc" id="5aL-rv-BmP"/>
+                        <outlet property="soundSwitch" destination="Faj-I9-Oa8" id="wEj-u7-Adl"/>
                     </connections>
                 </controller>
             </objects>

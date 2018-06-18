@@ -42,16 +42,6 @@ class InterfaceController: WKInterfaceController {
         bpm = 120
     }
     
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-    
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
-    
     func startMetronome() {
         timer = Timer.scheduledTimer(timeInterval: pulse, target: self, selector: #selector(updateMetronome), userInfo: nil, repeats: true)
     }
@@ -63,11 +53,16 @@ class InterfaceController: WKInterfaceController {
     
     @objc func updateMetronome() {
         compassCounter += 1
-        if compassCounter == compassUp {
-            WKInterfaceDevice.current().play(.click)
-            compassCounter = 0
+        
+        if DefaultsManager.getSoundState() {
+            AudioController.playAudio()
         } else {
-            WKInterfaceDevice.current().play(.click)
+            if compassCounter == compassUp {
+                WKInterfaceDevice.current().play(.click)
+                compassCounter = 0
+            } else {
+                WKInterfaceDevice.current().play(.click)
+            }
         }
     }
 
